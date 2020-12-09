@@ -1,0 +1,259 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+.navbar-custom {
+  background-color: black;
+  opacity: 1;
+}
+
+.nav-bar {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.container-fluid {
+  top: 10rem;
+  padding: 7% 5%;
+}
+
+img {
+  left: 0;
+  top: 10;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.navbar {
+  padding: 0 5rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat';
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0 0;
+  margin-left: 7%;
+}
+
+.nav-link {
+  color: white;
+  font-family: 'Montserrat-Light';
+  font-size: 1.2rem;
+  text-align: right;
+  margin: 1rem;
+}
+
+.ul-margin {
+  margin-right: 7%;
+}
+
+.nav-link:hover {
+  color: #d2d3c9;
+}
+
+.navbar-toggler {
+  border-color: white;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.white-section {
+  margin-top: 30%;
+  background-color: #fff;
+}
+
+#features {
+  top: 100rem;
+  position: absolute;
+}
+
+.feature-title {
+  font-family: 'Montserrat-Bold';
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 2.5%;
+  text-align: center;
+}
+
+.icon {
+  color: #f7941d;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #fa7f72;
+}
+
+.slog {
+  color: #839b97;
+  font-family: 'Montserrat-Light';
+}
+
+.row1 {
+  padding: 10rem 3rem 3rem 3rem;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+}
+
+.row {
+  padding: 3rem 3rem 3rem 3rem;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+}
+
+.name {
+  font-size: 5.0rem;
+  color: #f9813a;
+  font-family: 'Montserrat-Black';
+  padding: 0;
+  text-align: center;
+}
+
+.companyname {
+  margin-bottom: 0;
+  font-size: 8.0rem;
+  font-family: 'Montserrat-Black';
+}
+
+.mainslo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Montserrat';
+  margin-bottom: 1rem;
+  padding: 0;
+  color: #ffffff
+}
+
+.slogan {
+  font-size: 1.5rem;
+  font-family: 'Montserrat';
+}
+
+.myButton {
+  background-color: #f9813a;
+  border-radius: 20px;
+  display: inline-block;
+  /* cursor: pointer; */
+  color: #ffffff;
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 1.5rem;
+  padding: 11px 37px;
+  text-decoration: none;
+  border: none;
+}
+
+.myButton:hover {
+  color: #495464;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.bg {
+  margin-top: 3rem;
+  height: 100%;
+  width: 100%;
+}
+
+.bg img {
+  position: absolute;
+  left: 0;
+  top: 50;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+
+/*. h1 {
+    padding: 0px;
+    position: relative;
+    z-index: 2;
+}*/
+.aboutus {
+  font-family: 'Montserrat';
+  background-color: sandybrown;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.abt {
+  font-family: 'Montserrat-Bold';
+}
+
+.abttext {
+  font-family: 'Montserrat-Light';
+  text-align: center;
+  margin: 0 13vw;
+  ;
+}
+
+@media (max-width: 1220px) {
+  .bg {
+    margin-top: 7rem;
+  }
+
+  .row1 {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+
+  .companyname {
+    font-size: 7rem;
+    text-align: left;
+    height: 140px;
+  }
+
+  .mainslo {
+    text-align: center;
+  }
+
+  .slogan {
+    font-size: 1.3rem;
+  }
+
+  .myButton {
+    margin-right: 3rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .name {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .myButton {
+    visibility: hidden;
+  }
+
+  .slogan {
+    font-size: 3rem;
+    color: #f9813a;
+  }
+
+  .mainslo {
+    position: absolute;
+    top: 10%
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!--Style Sheet-->
+  <link rel="stylesheet" href="css/deleteEventstyle.css">
+</head>
+
+<body>
+  <div class="top"></div>
+  <div class="main">
+    <div class="heading">
+      <b>Delete Event</b>
+    </div>
+    <div id="hr"></div>
+    <div class="row">
+      <div class="col-lg-6">
+        <%  if(event!= null){ %>
+        <p style="text-align : center ; font-family: 'Montserrat'; font-size: 2rem ">Event <strong><%= event.eventName %></strong> has been deleted.</h3>
+          <%  }else{ %>
+        <p style="text-align : center ; font-family: 'Montserrat'; font-size: 2rem">The ID provided by you is incorrect.</h3>
+          <% } %>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

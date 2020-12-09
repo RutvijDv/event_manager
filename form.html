@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Create event</title>
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Modak&family=Play:wght@400;700&family=Quicksand:wght@600&family=Viga&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!--Style Sheet-->
+  <link rel="stylesheet" href="css/createEventstyle.css">
+</head>
+
+<body>
+  <div class="top"></div>
+  <div class="main">
+
+    <div class="heading">
+      <b>Create Event</b>
+    </div>
+    <div id="hr"></div>
+    <div class="row">
+      <div class="col-lg-6">
+        <form name="createEventForm" action="/createform" method="post">
+          <label for="event-name"><span class="number">1</span>Event Name</label>
+      </div>
+      <div class="col-lg-6"><input aria-required="true" type="text" name="eventName" placeholder="enter event name" required="required"><br></div>
+      <div class="col-lg-6"><label for="club-name"><span class="number">2</span>Club Name</label></div>
+      <div class="col-lg-6"><input aria-required="true" type="text" name="clubName" placeholder="enter club name" required="required"><br></div>
+      <div class="col-lg-6"><label for="start-time"><span class="number">4</span>Start Time</label></div>
+      <div class="col-lg-6"><input aria-required="true" type="date" name="startDate" placeholder="date" required="required">
+        <input aria-required="true" type="time" name="startTime" placeholder="time" required="required"><br>
+      </div>
+      <div class="col-lg-6"><label for="end-time"><span class="number">4</span>End Time</label></div>
+      <div class="col-lg-6"><input aria-required="true" type="date" name="endDate" placeholder="date" required="required">
+        <input aria-required="true" type="time" name="endTime" placeholder="time" required="required"><br>
+      </div>
+
+      <div class="col-lg-6"><label for="description"><span class="number">5</span>Description</label><br></div>
+      <div class="col-lg-6"><textarea name="description" rows="5" cols="70" placeholder="enter the description of your event"></textarea><br></div>
+      <div class="col-lg-6"><label for="registration-link"><span class="number">6</span>Registration Link</label></div>
+      <div class="col-lg-6"><input type="url" name="registrationLink"><br></div>
+      <hr id="hr">
+      <div class="col-lg-12">
+        <div class="center"><button type="submit" name="create">Create Event</button></div>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+</body>
+
+</html>

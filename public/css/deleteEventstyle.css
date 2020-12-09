@@ -1,0 +1,128 @@
+body {
+  background-color: white;
+  text-align: left;
+  font-family: "play";
+}
+
+.main {
+  position: relative;
+  border: 5px solid #321f28;
+  margin: -8.5% 20%;
+  background-color: sandybrown;
+  border-radius: 4rem;
+  z-index: 2;
+  top: 0;
+}
+
+.heading {
+  font-size: 6.3vw;
+  font-family: "Ubuntu";
+  color: #321f28;
+  margin: 2%;
+  text-align: center;
+}
+
+.number {
+  text-align: left;
+  background: #a05344;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 15px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 1px rgba(255, 255, 255, 0.2);
+  border-radius: 15px 15px 15px 0px;
+  border: 1.8px solid #e79e4f;
+  box-shadow: 0px 0px 0px 1.3px black;
+}
+
+label {
+  font-size: 2.1vw;
+  font-weight: 200;
+  margin: 0;
+}
+
+.row {
+  padding: 0 15%;
+}
+
+.col-lg-6 {
+  margin: 1.2% 0;
+}
+
+input,
+textarea {
+  margin: 10px 0;
+  background: rgba(255, 255, 255, .1);
+  border: none;
+  border-radius: 12px;
+  border: 1px solid #321f28;
+  font-size: 15px;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #f2dcbb;
+  color: #8a97a0;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+}
+
+button {
+  text-align: center;
+  box-shadow: 0px 0px 0px 2px black;
+  background-color: #734046;
+  border-radius: 18px;
+  border: 1.5px solid #e79e4f;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 2.0vw;
+  padding: 4px 21px;
+  text-decoration: none;
+  text-shadow: 0px 0.5px 0px #283966;
+}
+
+button:hover {
+  background-color: #a05344;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.col-lg-12 {
+  height: 80px;
+}
+
+#hr {
+  color: black;
+  border: 5px;
+  height: 10px;
+}
+
+.top {
+  position: relative;
+  background-color: #a05344;
+  height: 11vw;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  opacity: 0.9;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>deleteEvent</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Modak&family=Play:wght@400;700&family=Quicksand:wght@600&family=Viga&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!--Style Sheet-->
+  <link rel="stylesheet" href="css/deleteEventstyle.css">
+</head>
+
+<body>
+  <div class="top"></div>
+
+  <div class="main">
+    <div class="heading">
+      <b>Delete Event</b>
+    </div>
+    <div id="hr"></div>
+    <div class="row">
+      <div class="col-lg-6">
+        <form action="/deleteform" method="post">
+          <label for="eventid"><span class="number">1</span>Event ID</label>
+      </div>
+      <div class="col-lg-6"><input type="text" name="eventid" placeholder="enter your event id"><br></div>
+      <hr id="hr">
+      <div class="col-lg-12">
+        <div class="center"><button type="submit" name="deleteEvent">Delete</button></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

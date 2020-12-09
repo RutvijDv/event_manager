@@ -1,0 +1,105 @@
+
+.event {
+  background-color: #e89f71;
+  height: 100%;
+  margin: 4% 4%;
+  border-radius: 10px;
+  border: 3.5px solid #321f28;
+}
+
+.eventname {
+  margin-top: 0.5%;
+  padding-left: 17%;
+  position: relative;
+  background-color: white;
+  font-size: 3.5vw;
+  font-family: "fredoka one";
+}
+
+.statusGreen {
+  padding: 0.8%;
+  background-color: green;
+  margin-left: 3%;
+  display: inline;
+  font-size: 1.2rem;
+  font-family: "play";
+  border-radius: 15px;
+  color: white;
+}
+
+.statusBlue {
+  padding: 0.8%;
+  background-color: blue;
+  margin-left: 3%;
+  display: inline;
+  font-size: 1.2rem;
+  font-family: "play";
+  border-radius: 15px;
+  color: white;
+}
+
+.top {
+  position: relative;
+  background-color: #aa4a30;
+  height: 11vw;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  font-size: 7vw;
+  font-family: "ubuntu";
+  text-align: center;
+  color: white;
+}
+
+.content {
+  position: relative;
+  margin: 5px 5px 5px 17%;
+  height: 100%;
+  background-color: white;
+  font-size: 3.5vw;
+  font-family: "fredoka one";
+  background-color: #e89f71;
+  border-radius: 10px;
+}
+
+.col-lg-12 {
+  position: relative;
+  top: 0;
+  font-family: "montserrat-Bold";
+  font-size: 1.3vw;
+  font-weight: 400;
+  margin-bottom: 0px;
+  height: auto;
+}
+
+.row {
+  padding: 0 0;
+}
+
+.clubname {
+  font-size: 2.2vw;
+  font-weight: 400;
+}
+
+.myButton {
+  background-color: #f9813a;
+  border-radius: 20px;
+  display: inline-block;
+  /* cursor: pointer; */
+  color: #ffffff;
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 1.3vw;
+  padding: 0.3% 0.6%;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 1%;
+}
+
+.myButton:hover {
+  color: #495464;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
