@@ -82,7 +82,8 @@ const userSchema = new mongoose.Schema({
     type : String,
     require : false,
     unique : false
-  }
+  },
+  createdEvents : [String]
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -110,8 +111,10 @@ passport.use(new GoogleStrategy({
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(request, accessToken, refreshToken, profile, done) {
-    console.log(profile);
     User.findOrCreate({ googleId: profile.id, email: profile.email, username: profile.given_name}, function (err, user) {
+      if(err){
+        console.log(err);
+      }
       return done(err, user);
     });
   }
@@ -169,15 +172,25 @@ app.get("/timeline", function(req, res) {
 
 //get request to create form.
 app.get("/createform", function(req, res) {
-  res.render("createform");
+  if(req.isAuthenticated()){
+    res.render("createform");
+  } else {
+    res.redirect("/login");
+  }
+
 });
 
 //get request to created form.
 app.get("/formcreated", function(req, res) {
-  res.render("formcreated", {
-    eventid: currentcreated._id,
-    event: currentcreated.eventName
-  });
+  if(req.isAuthenticated()){
+    res.render("formcreated", {
+      eventid: currentcreated._id,
+      event: currentcreated.eventName
+    });
+  } else{
+    res.redirect("/login");
+  }
+
 });
 
 //get request to delete form.
@@ -193,17 +206,39 @@ app.get("/formdeleted", function(req, res) {
   });
 });
 
+//google authentication
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['email' ,'profile' ] })
 );
 
 app.get( '/auth/google/eventistry',
     passport.authenticate( 'google', {
-        successRedirect: '/createform',
+        successRedirect: '/profile',
         failureRedirect: '/login'
 }));
 
+//get request to profile
+app.get("/profile",function(req,res){
+  if(req.isAuthenticated()){
+    userEvents = req.user.createdEvents;
+    event.find({_id : userEvents}, function(err,foundEvent){
+      if(err){
+        console.log(err);
+      } else {
+        res.render("profile",{username: req.user.username, email: req.user.email, eventArr: foundEvent});
+      }
+    });
 
+  }else{
+    res.redirect("/login");
+  }
+});
+
+//get request to logout
+app.get("/logout",function(req,res){
+  req.logout();
+  res.redirect("/login");
+});
 
 /////////////////////////////////////// post requests ////////////////////////////////////////////////////////
 
@@ -229,8 +264,30 @@ app.post("/createform", function(req, res) {
   newevent.clashing = false;
 
   currentcreated = newevent;
-  updateData.clash(event,currentcreated);
   newevent.save();
+  updateData.clash(event,currentcreated);
+  if(req.isAuthenticated()){
+    User.findById(req.user._id, function(err,foundUser){
+      if(err){
+        console.log(err);
+      }else{
+        if(foundUser){
+          userEvents = foundUser.createdEvents;
+          userEvents.push(currentcreated._id);
+          User.findByIdAndUpdate(req.user._id,{ $set: {createdEvents: userEvents}},function(err,user){
+            if(err){
+              console.log(err);
+            }else{
+              console.log(user);
+            }
+          });
+        }
+      }
+    });
+  }else{
+    res.redirect("/login");
+  }
+  console.log(req.user);
   newevent = new event();
 
   res.redirect("/formcreated");

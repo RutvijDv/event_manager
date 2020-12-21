@@ -5,7 +5,6 @@ body {
 }
 
 .main {
-  width: inherit;
   position: relative;
   border: 5px solid #321f28;
   margin: -8.5% 20%;
@@ -13,7 +12,6 @@ body {
   border-radius: 4rem;
   z-index: 2;
   top: 0;
-
 }
 
 .heading {
@@ -36,9 +34,9 @@ body {
   line-height: 30px;
   text-align: center;
   text-shadow: 1px rgba(255, 255, 255, 0.2);
-  border-radius: 15px 15px 15px 0;
+  border-radius: 15px 15px 15px 0px;
   border: 1.8px solid #e79e4f;
-  box-shadow: 0 0 0 1.3px black;
+  box-shadow: 0px 0px 0px 1.3px black;
 }
 
 label {
@@ -75,8 +73,7 @@ textarea {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
 }
 
-.buttons {
-  margin: 4px 0;
+button {
   text-align: center;
   box-shadow: 0px 0px 0px 2px black;
   background-color: #734046;
@@ -92,11 +89,11 @@ textarea {
   text-shadow: 0px 0.5px 0px #283966;
 }
 
-.buttons:hover {
+button:hover {
   background-color: #a05344;
 }
 
-.buttons:active {
+button:active {
   position: relative;
   top: 1px;
 }

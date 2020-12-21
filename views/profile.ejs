@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/profilestyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="top">
+    <div class="welcome">Welcome Back
+    </div>
+
+  </div>
+  <div class="profile">
+    <h1 class="name"><%= username %></h1>
+    <h5 class="username"><%= email %></h5>
+    <a class="btn btn-primary btn-lg shadow-none" href="/createform" role="button" name="create">Create Event</a>
+    <a class="btn btn-primary btn-lg" href="/deleteform" role="button" name="delete">Delete Event</a>
+    <!-- <button class="btn btn-primary btn-lg shadow-none" type="submit" name="create">Create Event</button><button class="btn btn-primary btn-lg" type="submit" name="create">Delete Event</button>-->
+  </div>
+
+
+  <% if(eventArr.length!=0) { %>
+  <% for (var i=0; i<eventArr.length; i++) { %>
+  <% var name = eventArr[i].eventName %>
+  <% var club = eventArr[i].clubName %>
+  <% var start = eventArr[i].startDate %>
+  <% var end = eventArr[i].endDate %>
+  <% var description = eventArr[i].description %>
+  <% var registrationLink = eventArr[i].registrationLink %>
+  <% var status = eventArr[i].status %>
+  <% var clashOrNot = eventArr[i].clashing %>
+  <% var datestr = {weekday: "long",day: "numeric",month: "long"}; %>
+  <% var startday = start.toLocaleDateString("en-US", datestr); %>
+  <% var endday = end.toLocaleDateString("en-US", datestr); %>
+  <% function formatDate(date) { %>
+  <% var hours = date.getHours() %>
+  <% var minutes = date.getMinutes() %>
+  <% var ampm = hours >= 12 ? 'pm' : 'am' %>
+  <% hours = hours % 12 %>
+  <% hours = hours ? hours : 12 // the hour '0' should be '12' %>
+  <% minutes = minutes < 10 ? '0'+minutes : minutes %>
+  <% var strTime = hours + ':' + minutes + ' ' + ampm %>
+  <% return strTime %>
+  <% } %>
+  <% var starttime = formatDate(start) %>
+  <% var endtime = formatDate(end) %>
+
+  <div class="event">
+    <div class="eventname"><%= name %>
+      <%var changeclass= "" %>
+      <% if(status=='ongoing'){ %>
+      <% changeclass = 'statusGreen'%>
+      <%}else{ %>
+      <% changeclass = 'statusBlue'%>
+      <%} %>
+      <div class="<%= changeclass %>"><%= status %></div>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-lg-12 clubname">
+          Organised by <strong><%= club %></strong>
+        </div>
+        <div class="col-lg-12">
+          Event id : <%= eventArr[i]._id %>
+        </div>
+        <div class="col-lg-12">
+          Scheduled on <%= startday %>
+        </div>
+
+        <div class="col-lg-12">
+          Starts at <%= starttime %>
+        </div>
+        <div class="col-lg-12">
+          Will End by <%= endday %> &nbsp <%= endtime %>
+        </div>
+        <div class="col-lg-12">
+          <strong> Description :</strong>
+          <div class="col-lg-12">
+            <%= description %>
+          </div>
+        </div>
+        <% if(clashOrNot){ %>
+        <div class="col-lg-12" style="color: red">
+          <strong> *** Event-clashes </strong>
+        </div>
+        <%} %>
+        <div class="col-lg-12">
+          <a class="myButton btn-light" href="<%= registrationLink %>" role="button">Registration Link</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <%  } %>
+  <% }else{ %>
+  <div class="event">
+    <div class="col-lg-12" style="text-align: center">
+      <strong>No events created by you.</strong>
+    </div>
+  </div>
+  <% } %>
+
+
+    <div class="logout">
+      <a class="btn btn-primary btn-lg shadow-none" href="/logout" role="button" name="logout">LOG OUT</a>
+    </div>
+
+
+
+
+</body>
+
+</html>
