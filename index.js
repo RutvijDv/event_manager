@@ -32,7 +32,7 @@ app.use(passport.session());
 
 
 //conecting to database eventmanager and creating database and new event
-mongoose.connect("mongodb://localhost:27017/eventmanager", {
+mongoose.connect("mongodb+srv://admin-shrushti:" + process.env.DBPASSWORD + "@cluster0.tn2wh.mongodb.net/eventManager?retryWrites=true&w=majority", {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
@@ -277,8 +277,6 @@ app.post("/createform", function(req, res) {
           User.findByIdAndUpdate(req.user._id,{ $set: {createdEvents: userEvents}},function(err,user){
             if(err){
               console.log(err);
-            }else{
-              console.log(user);
             }
           });
         }
@@ -287,7 +285,6 @@ app.post("/createform", function(req, res) {
   }else{
     res.redirect("/login");
   }
-  console.log(req.user);
   newevent = new event();
 
   res.redirect("/formcreated");
@@ -350,7 +347,10 @@ app.post("/login", function(req, res){
 
 
 ////////////////////////////////////// listen to the port //////////////////////////////////////////////////
-
-app.listen(3000, function() {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, function() {
   console.log("server started at 3000");
 });
